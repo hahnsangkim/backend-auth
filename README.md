@@ -62,6 +62,8 @@ Put the URL in your browser
 5. Log in with the right username and password, directing you to the `/members` page
 6. Log out and go to the `/members` endpoint
 
+Note: Once completing signup, the web app redirects a user to the login page, so that the user can log in with their credentials created.
+
 ### Stop Web App
 You can stop running the app by commanding
 ```
