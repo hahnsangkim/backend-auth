@@ -88,4 +88,4 @@ test_app.py ......                                                [100%]
 [Bootstrap template](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
 ## Note
-I spent 8 - 10 hours on this exercise.
+I spent 10 - 12 hours on this exercise.
