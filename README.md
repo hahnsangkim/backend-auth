@@ -16,7 +16,7 @@ A web application that allows users to sign up for a website and then log in sec
     ** A successful authentication redirects a user to the page of `\members`
 * miscellaneous
     ** The web app stores credentials in an SQL database and queries them from the database
-    ** The deliverable includes the SQL table creation scripts
+    ** The deliverable includes the SQL table creation scripts - included, no need to run explicitly
     ** The deliverable includes `Dockerfile` and `docker-compose.yml`
     ** The web app starts via `docker-compose up -d`
 
@@ -88,4 +88,4 @@ test_app.py ......                                                [100%]
 [Bootstrap template](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
 ## Note
-I spent x hours on this exercise.
+I spent 8 - 10 hours on this exercise.
