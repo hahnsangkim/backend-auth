@@ -14,40 +14,78 @@ A web application that allows users to sign up for a website and then log in sec
     ** `/members` is accessible to authenticated users only
     ** If user's login credentials are not valid, the user is informed
     ** A successful authentication redirects a user to the page of `\members`
-       
-10. The web app stores credentials in an SQL database and queries them from the database
-11. The deliverable includes the SQL table creation scripts
-12. The deliverable includes `Dockerfile` and `docker-compose.yml`
-13. The web app starts via `docker-compose up -d`
+* miscellaneous
+    ** The web app stores credentials in an SQL database and queries them from the database
+    ** The deliverable includes the SQL table creation scripts
+    ** The deliverable includes `Dockerfile` and `docker-compose.yml`
+    ** The web app starts via `docker-compose up -d`
 
 # Web App
 ## Structure
-- model in model.py
-    - User
+- app.py: Maintain a server
+- config.py: Create a session and a login manager
+- model.py: Define a User schema and create the table
+- routes.py: Handle all endpoints
 - templates
-    - html files
+    - base.html: an html frame
+    - index.html: login form
+    - signup.html: signup form
+    - members.html: a page for authenticated users
+    - warning.html: a warning page
+- Dockerfile: docker container description
+- docker-compose.yml: docker-compose description
+- requirements.txt: installed packages
+- users.db: An SQL DB (Can start from scratch with it removed)
+
 ## Instruction
+```bash
+$ git clone https://github.com/hahnsangkim/kim-backend-1.git
+$ cd kim-backend-1
+(kim-backend-1) $ docker-compose build
+```
 
 ### Run Web App
 ```bash
-(flask) $ flask run
+(kim-backend-1) $ docker-compose up -d
 ```
 
-### Run Tester
+### Use Cases
+1. Try with random usernames and passwords for login
+2. Try with either of username and password missing for login
+3. Create credentials with a username and password for signup
+4. Create credentials with the same username for signup
+5. Log in with the right username and password, directing you to the `/members` page
+6. Log out and go to the `/members` endpoint
+
+### Stop Web App
+Put the following in your browser URL
+```
+0.0.0.0:5000
+```
+
+You can stop running the app by commanding
+```
+$ docker-compose stop
+```
+
+
+### Run PyTest on the docker containers
 ```bash
-(flask) $ pytest
+$ pytest --use-running-containers
 ========================= test session starts =========================
 platform darwin -- Python 3.8.2, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
 rootdir: /Users/kim-backend-1
-collected 6 items
+collected 12 items
 test_app.py ......                                                [100%]
-========================== 6 passed in 3.27s ==========================
+========================== 12 passed in 0.68s ==========================
 ```
-## Reference
+## References
 [Flask](https://flask.palletsprojects.com/en/2.0.x/quickstart/)
 [Testing Flask Apps](https://flask.palletsprojects.com/en/1.1.x/testing/)
-[DB Thread](https://stackoverflow.com/questions/48218065/programmingerror-sqlite-objects-created-in-a-thread-can-only-be-used-in-that-sa)
-
+[pytest on docker compose](https://github.com/pytest-docker-compose/pytest-docker-compose)
+[Troubleshoot-DB Thread](https://stackoverflow.com/questions/48218065/programmingerror-sqlite-objects-created-in-a-thread-can-only-be-used-in-that-sa) 
+[Troubleshoot-session handler](https://docs.sqlalchemy.org/en/13/faq/sessions.html#this-session-s-transaction-has-been-rolled-back-due-to-a-previous-exception-during-flush-or-similar)
+[Bootstrap template](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
 ## Note
 I spent x hours on this exercise.
