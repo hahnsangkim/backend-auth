@@ -6,22 +6,22 @@ A web application that allows users to sign up for a website and then log in sec
     * A user signs up with an email address and password
     * A user logins with an existing email address and password
     * A user logs out
-* endpoints
+* Endpoints
     * `/` allows a user to login
     * `/members` allows a user to log out
     * `/signup` allows a user to sign up
-* constraints
+* Constraints
     * `/members` is accessible to authenticated users only
     * If user's login credentials are not valid, the user is informed
     * A successful authentication redirects a user to the page of `\members`
-* miscellaneous
+* Miscellaneous
     * The web app stores credentials in an SQL database and queries them from the database
     * The deliverable includes the SQL table creation scripts - included, no need to run explicitly
     * The deliverable includes `Dockerfile` and `docker-compose.yml`
     * The web app starts via `docker-compose up -d`
 
 # Web App
-## Structure
+## Folder Structure
 - app.py: Maintain a server
 - config.py: Create a session and a login manager
 - model.py: Define a User schema and create the table
@@ -49,7 +49,7 @@ $ cd kim-backend-1
 (kim-backend-1) $ docker-compose up -d
 ```
 
-Put it in your browser URL
+Put the URL in your browser
 ```
 0.0.0.0:5000
 ```
@@ -88,4 +88,4 @@ test_app.py ......                                                [100%]
 - [Bootstrap template](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
 ## Note
-I spent 10 - 12 hours on this exercise.
+Spent 10 - 12 hours on this exercise.
