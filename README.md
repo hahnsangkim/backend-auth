@@ -21,21 +21,21 @@ A web application that allows users to sign up for a website and then log in sec
     * The web app starts via `docker-compose up -d`
 
 # Web App
-## Folder Structure
-- app.py: Maintain a server
-- config.py: Create a session and a login manager
-- model.py: Define a User schema and create the table
-- routes.py: Handle all endpoints
+## Repository Structure
+- _app.py_: Maintain a server
+- _config.py_: Create a session and a login manager
+- _model.py_: Define a User schema and create the table
+- _routes.py_: Handle all endpoints
 - templates
-    - base.html: an html frame
-    - index.html: login form
-    - signup.html: signup form
-    - members.html: a page for authenticated users
-    - warning.html: a warning page
-- Dockerfile: docker container description
-- docker-compose.yml: docker-compose description
-- requirements.txt: installed packages
-- users.db: An SQL DB (Can start from scratch with it removed)
+    - _base.html_: an html frame
+    - _index.html_: login form
+    - _signup.html_: signup form
+    - _members.html_: a page for authenticated users
+    - _warning.html_: a warning page
+- _Dockerfile_: docker container description
+- _docker-compose.yml_: docker-compose description
+- _requirements.txt_: installed packages
+- _users.db_: An SQL DB (Can start from scratch with it removed)
 
 ## Instruction
 ```bash
