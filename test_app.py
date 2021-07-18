@@ -75,6 +75,7 @@ def test_login_4():
     mock_password = 'test'
     response = login(client, mock_username, mock_password)
     assert response.status_code == 200
+    logout(client)
 
 def test_login_5():
     mock_username = generate_random_word()

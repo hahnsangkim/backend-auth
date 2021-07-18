@@ -2,14 +2,9 @@ version: "3"
 
 services: 
     web:
-        build:
-            context: .
+        build: .
+        volumes: 
+            - .:/app
         ports:
             - 5000:5000
         command: gunicorn --bind 0.0.0.0:5000 app:app
-    # test:
-    #     build:
-    #         context: .
-    #     ports:
-    #         - 5000:5000
-    #     command: pytest --docker-compose-no-build --use-running-containers

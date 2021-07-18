@@ -73,16 +73,28 @@ $ docker-compose stop
 ```
 
 
-### Run PyTest on the docker containers
+### Run PyTest on the docker container
 ```bash
-(kim-backend-1) $ pytest --use-running-containers
+(kim-backend-1) $ docker-compose up -d
+
+(kim-backend-1) $ docker ps
+CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS         PORTS                    NAMES
+8e350c63a767   kim-backend-1_web   "gunicorn --bind 0.0…"   2 minutes ago   Up 1 second   0.0.0.0:5000->5000/tcp   kim-backend-1_web_1
+
+(kim-backend-1) $ docker exec -it 8e350c63a767 bash -l
+
+(root@8e350c63a767) $ pytest
 ========================= test session starts =========================
 platform darwin -- Python 3.8.2, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
 rootdir: /Users/kim-backend-1
 collected 12 items
 test_app.py ......                                                [100%]
 ========================== 12 passed in 0.68s ==========================
+
+(root@8e350c63a767) $ exit
+logout
 ```
+
 ## References
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/quickstart/)
 - [Testing Flask Apps](https://flask.palletsprojects.com/en/1.1.x/testing/)
