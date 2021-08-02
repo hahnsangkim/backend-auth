@@ -20,8 +20,6 @@ A web application that allows users to sign up for a website and then log in sec
     * The deliverable includes `Dockerfile` and `docker-compose.yml`
     * The web app starts via `docker-compose up -d`
 
-[Click on me to the original description](https://gitlab.com/array.com/tests-backend/-/blob/master/exercise-1.md)
-
 # Web App
 ## Repository Structure
 - _app.py_: Maintain a server
